@@ -55,6 +55,9 @@ def ButtonHandeler(channel):
 if pi_interface:
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(19,GPIO.OUT)
+    GPIO.setup(26,GPIO.OUT)
+    GPIO.setup(13,GPIO.OUT)
+    GPIO.setup(6,GPIO.OUT)
     GPIO.setup(17,GPIO.IN)
     GPIO.add_event_detect(17,GPIO.BOTH,ButtonHandeler)
 
@@ -70,6 +73,11 @@ def set(key,value):
     """
     GPIO_STATE[key] = value
     if (key=="GPIO1") and pi_interface:
+        if value.upper()=="ON":
+            GPIO.output(26,GPIO.HIGH)
+        else:
+            GPIO.output(26,GPIO.LOW)
+    if (key=="GPIO2") and pi_interface:
         if value.upper()=="ON":
             GPIO.output(19,GPIO.HIGH)
         else:
