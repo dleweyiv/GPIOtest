@@ -169,6 +169,8 @@ class GPIO_ControlSkill(MycroftSkill):
                         self.blink_active = False
                         GPIO.set("GPIO1","On")
                         GPIO.set("GPIO2","On")
+                        GPIO.set("GPIO3","On")
+                        GPIO.set("GPIO4","On")
                     elif message.data["ioparam"].upper() == "OFF":
                         self.blink_active = False
                         GPIO.set("GPIO1","Off")
