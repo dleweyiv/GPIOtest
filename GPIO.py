@@ -82,6 +82,16 @@ def set(key,value):
             GPIO.output(19,GPIO.HIGH)
         else:
             GPIO.output(19,GPIO.LOW)
+    if (key=="GPIO3") and pi_interface:
+        if value.upper()=="ON":
+            GPIO.output(13,GPIO.HIGH)
+        else:
+            GPIO.output(13,GPIO.LOW)
+    if (key=="GPIO4") and pi_interface:
+        if value.upper()=="ON":
+            GPIO.output(6,GPIO.HIGH)
+        else:
+            GPIO.output(6,GPIO.LOW)
     if key in GPIO_ON:
         GPIO_ON[key]()
 
